@@ -1,0 +1,137 @@
+:root {
+    --button-color: #dadce0;
+    --button-hover-color: rgb(240, 240, 240);
+}
+
+.sidebar {
+    position: absolute;
+    min-height: 100vh;
+    width: 400px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #e8eaed;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px 10px;
+    flex-shrink: 0;
+    z-index: 2;
+    transform: translateX(-100%);
+    /* animation-delay: 1s; */
+}
+
+.sidebar.slide-in {
+    animation: slide-in 0.5s forwards;
+    * {
+        animation: fadein 1.5s;
+    }
+}
+
+.sidebar.slide-out {
+    animation: slide-out 0.5s forwards;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.sidebar img {
+    height: 40px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.sidebar .new-chat {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: var(--button-color);
+    border-radius: 50px;
+    font-size: 14px;
+    color: gray;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+        background-color: var(--button-hover-color);
+    }
+}
+
+.sidebar .recent-tab {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .recent-text {
+    max-width: 50%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.sidebar .recent-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    color: #282828;
+    background-color: var(--button-color);
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: all 300ms ease-in-out;
+    overflow: hidden;
+
+    &:hover {
+        background-color: var(--button-hover-color);
+    }
+}
+
+.sidebar .recent-entry p {
+    margin-right: 10px;
+
+    flex-shrink: 0;
+}
+
+.sidebar .bottom-item {
+    height: 50px;
+    width: 100%;
+    background-color: var(--button-color);
+    border-radius: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: var(--button-hover-color);
+    }
+}
+
+a {
+    font-style: none;
+    color: #000;
+    text-decoration: none;
+}

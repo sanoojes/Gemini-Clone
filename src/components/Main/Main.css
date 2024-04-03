@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+:root {
+    --bard-color-surface: #131314;
+    --bard-color-brand-text-gradient-stop-1: #4285f4;
+    --bard-color-brand-text-gradient-stop-2: #9b72cb;
+    --bard-color-brand-text-gradient-stop-3: #d96570;
+    --button-color: #dadce0;
+    --button-hover-color: #dadce0;
+    --card-hover-color: rgba(217, 219, 224, 0.4);
+    --background-color: #f0f4f9;
+}
+*:focus {
+    outline: none;
+}
+
+.container-side-nav img {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.container-side-nav {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px;
+    transition: all 300ms ease-in-out;
+    overflow: hidden;
+    font-family: "Outfit", Helvetica, sans-serif;
+}
+
+.top-bar {
+    /* padding: 10px 0px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        border-radius: 100px;
+    }
+    span {
+        /* margin-left: 25px; */
+        font-size: 1.25rem;
+        font-weight: 400;
+        z-index: 10;
+    }
+}
+
+.top-bar .menu img {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+.top-bar .menu {
+    z-index: 6;
+}
+
+.top-bar .menu-icon {
+    display: block;
+    cursor: pointer;
+}
+
+.main {
+    height: 70vh;
+    display: inline-flex;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
+    max-width: 900px;
+}
+
+.main .big-text {
+    display: flex;
+    flex-direction: column;
+    span {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 4rem;
+    }
+    .greet {
+        position: relative;
+        display: inline-block;
+        color: transparent;
+        background: linear-gradient(
+            74deg,
+            var(--bard-color-brand-text-gradient-stop-1) 0,
+            var(--bard-color-brand-text-gradient-stop-2) 9%,
+            var(--bard-color-brand-text-gradient-stop-3) 20%,
+            var(--bard-color-brand-text-gradient-stop-3) 24%,
+            var(--bard-color-brand-text-gradient-stop-2) 35%,
+            var(--bard-color-brand-text-gradient-stop-1) 44%,
+            var(--bard-color-brand-text-gradient-stop-2) 50%,
+            var(--bard-color-brand-text-gradient-stop-3) 56%,
+            var(--bard-color-surface) 75%,
+            var(--bard-color-surface) 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .text1 {
+        position: relative;
+        font-size: 3rem;
+        display: inline-block;
+        color: #b7b7b7;
+        letter-spacing: -0.03em;
+    }
+}
+
+.main .cards {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.main .card {
+    position: fixed;
+    height: 200px;
+    min-width: 200px;
+    padding: 15px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: var(--card-hover-color);
+    }
+}
+
+.main .card img {
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    background-color: white;
+    border-radius: 100px;
+    padding: 5px;
+    right: 10px;
+    bottom: 10px;
+}
+
+.bottom-bar {
+    position: sticky;
+    align-self: center;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bottom-bar .prompt-bar {
+    display: inline-flex;
+    height: 64px;
+    width: 100%;
+    padding: 0px 10px;
+    align-items: center;
+    border-radius: 100px;
+    background-color: var(--background-color);
+
+    img {
+        padding: 10px;
+        border-radius: 100px;
+        cursor: pointer;
+    }
+    .input-bar {
+        height: 80%;
+        width: 100%;
+        border: none;
+        overflow: hidden;
+        background-color: transparent;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 100px;
+    }
+}
+
+.bottom-bar .prompt-bar img:hover {
+    background-color: var(--button-hover-color);
+}
+
+.bottom-bar p {
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1rem;
+    letter-spacing: 0.1px;
+    text-align: center;
+}
+
+.result {
+    display: inline-flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    /* margin-top: 20px; */
+}
+
+.result img {
+    border-radius: 100px;
+}
+
+.result-data-container {
+    display: flex;
+    gap: 20px;
+}
+
+.result .result-data {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-self: start;
+    gap: 10px;
+}
+
+.result-title {
+    margin-top: 10px;
+
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.result-data p {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.result strong {
+    /* margin-top: 20px; */
+    line-height: 1.8;
+}
+
+.loader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loader hr:nth-child(2) {
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f4f9;
+    background: linear-gradient(to right, #4285f4, rgb(211, 228, 255), #4285f4);
+    background-size: 900px 100px;
+    animation: loader1 3s infinite linear;
+}
+
+.loader hr {
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f4f9;
+    background: linear-gradient(to right, #4285f4, rgb(211, 228, 255), #4285f4);
+    background-size: 900px 100px;
+    animation: loader2 3s infinite linear;
+}
+.loader hr:nth-child(1) {
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f4f9;
+    background: linear-gradient(to right, #4285f4, rgb(211, 228, 255), #4285f4);
+    background-size: 900px 100px;
+    animation: loader3 3s infinite linear;
+}
+
+@keyframes loader1 {
+    0% {
+        background-position: -900px 0px;
+    }
+    100% {
+        background-position: 900px 0px;
+    }
+}
+
+@keyframes loader2 {
+    0% {
+        background-position: -700px 0px;
+    }
+    100% {
+        background-position: 700px 0px;
+    }
+}
+
+@keyframes loader3 {
+    0% {
+        background-position: -500px 0px;
+    }
+    100% {
+        background-position: 500px 0px;
+    }
+}
